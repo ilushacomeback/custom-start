@@ -27,13 +27,14 @@ if (process.env.SERVE) {
 module.exports = {
   mode,
   target,
+  plugins,
   entry: './src/app/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
-  devtool: 'source-map',
+  devtool: mode === 'production' ? 'source-map' : 'inline-source-map',
   devServer: {
     hot: true,
   },
