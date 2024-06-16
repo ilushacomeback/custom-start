@@ -37,6 +37,7 @@ module.exports = {
   devtool: mode === 'production' ? 'source-map' : 'inline-source-map',
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
